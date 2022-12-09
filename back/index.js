@@ -1,8 +1,16 @@
 const express = require("express");
+const cors = require("cors");
 const { default: mongoose } = require("mongoose");
 
-const app = express();
+const corsOptions = {
+    origin: '*',
+    credentials: true,            //access-control-allow-credentials:true
+    optionSuccessStatus: 200,
+}
 
+
+const app = express();
+app.use(cors(corsOptions));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded( { extended: true }));
 const Product = require('./models/Product');
@@ -23,7 +31,7 @@ app.get('/products', async (req, res) => {
     res.send(products);
 })
 
-app.listen(3001, () => {
-    console.log("listening on port 3001!");
+app.listen(4000, () => {
+    console.log("listening on port 4000!");
 })
     

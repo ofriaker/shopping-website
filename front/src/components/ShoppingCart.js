@@ -1,6 +1,6 @@
 import React from 'react';
 import { products } from './data';
-import Product from './Product';
+// import Product from './Product';
 
 
 export default function ShoppingCart() {

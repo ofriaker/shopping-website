@@ -1,6 +1,6 @@
 .product-details {
     float: left;
-    margin-right: 40%;
+    margin-right: 50px;
     font-size: large;
     
 }
@@ -16,8 +16,14 @@
 .product-item {
     padding: 10px;
     margin: 10px;
-    border: 1px solid;
-    display: flex;
-    text-align: center;
-    gap: 30px;
+    border: 2px solid;
+    display:flex;
+    text-align:left;
+    gap: 65%;
+  }
+
+  p {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    
   }

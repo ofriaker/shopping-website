@@ -16,6 +16,18 @@ export const products = [
         name: 'Ipad',
         price: '2500',
         productImageUrl: 'https://img.ksp.co.il/item/147307/b_1.jpg?v=5'
+    },
+    {
+      id: 4,
+      name: 'TV',
+      price: '6000',
+      productImageUrl: 'https://d2d22nphq0yz8t.cloudfront.net/6cbcadef-96e0-49e9-b3bd-9921afe362db/https://www.payngo.co.il/media/catalog/product/cache/142fd3372bf734bc9f90e710566b5dac/2/6/2615955.jpg/mxw_2048,f_auto'
+    },
+    {
+    id: 5,
+    name: 'Watch',
+    price: '1500',
+    productImageUrl: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/FQKW2?wid=1673&hei=1353&fmt=jpeg&qlt=95&.v=1517334319257'
     }
   ]
 

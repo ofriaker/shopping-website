@@ -14,6 +14,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<ProductList />} />
+          <Route path="/productList" element={<ProductList />} />
           <Route path="shoppingCart" element={<ShoppingCart />}>
           </Route>
         </Routes>

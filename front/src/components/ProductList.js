@@ -1,10 +1,9 @@
-//import { products } from './data';
 import Product from './Product.js';
 import React, { useEffect, useState } from 'react';
 
-export default function ProductList() {
-
-var [products, setProduct] = useState([]);
+export default function ProductList(props) {
+// const addToCart = props.addToCart;
+ var [products, setProduct] = useState([]);
 
 useEffect(() => {
   const fetchData = async () => {
@@ -20,14 +19,24 @@ useEffect(() => {
   fetchData();
 }, []);
     
-      return products.map(product => (
-        <Product key={product.name}
-          name={product.name}
-          price={product.price}
-          description={product.description}
-          productImageUrl={product.productImageUrl}
-        />
-      ));
+  //const [cart, setCart] = React.useState(list);
+
+  return products.map(product => (
+    <div>
+      <Product
+        key={product.id}
+        product={product}
+        addToCart={props.addToCart} />
+    </div>
+  ));
+      // return products.map(product => (
+      //   <Product addToCart={addToCart} key={product.name}
+      //     name={product.name}
+      //     price={product.price}
+      //     description={product.description}
+      //     productImageUrl={product.productImageUrl}
+      //   />
+      // ));
     
 }
   

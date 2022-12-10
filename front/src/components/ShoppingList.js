@@ -1,15 +1,17 @@
-import React from 'react';
 import CartItem from './CartItem';
-import { list } from './data';
+import React from 'react';
+//import { list } from './data';
 
-export default function ShoppingList() {
+function ShoppingList(props) {
+    const cart = props.cart;
+    //const [cart, setCart] = React.useState(list);
 
-    return list.map(l => (
+    return cart.map(l => (
         <div>
             <CartItem
-            name={l.name}
-            price={l.price}
-            productImageUrl={l.productImageUrl} />
+                key={l.id} 
+                product = {l} />
         </div>
         ));
 }
+export default ShoppingList;

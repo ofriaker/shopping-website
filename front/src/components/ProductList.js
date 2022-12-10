@@ -24,6 +24,7 @@ useEffect(() => {
         <Product key={product.name}
           name={product.name}
           price={product.price}
+          description={product.description}
           productImageUrl={product.productImageUrl}
         />
       ));

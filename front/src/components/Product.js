@@ -1,4 +1,7 @@
 import React from 'react';
+import './Product.css';
+import { Component } from 'react';
+
 
 function Product(props){
 

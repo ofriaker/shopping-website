@@ -1,18 +1,14 @@
 import React from 'react';
-import { products } from './data';
-import Product from './Product';
+import ShoppingList from './ShoppingList';
 
 
 export default function ShoppingCart() {
-
-        return products.map(product => (
-            <div>
-                <h1>Shopping</h1>
-                {/* <Product
-                name={product.name}
-                price={product.price}
-                productImageUrl={product.productImageUrl} /> */}
-                </div>
-            ));
+    return (
+        <div className='container'>
+        <h1> My Shoping Cart</h1>
+        <ShoppingList></ShoppingList>
+        <button type="button" class="btn btn-outline-success btn-lg">Buy Now</button>  
+        </div>
+    )
 
 }

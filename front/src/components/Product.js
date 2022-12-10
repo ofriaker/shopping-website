@@ -17,6 +17,7 @@ function Product(props){
             <div className='mt-4 fs-4'>
               <p>Product name: {props.name}</p>
               <p>Price: {props.price}</p>
+              <p>Descripton: {props.description}</p>
               <button className="btn btn-outline-success" onClick={onAdd}>Add To Shopping Cart</button>
             </div>
 

@@ -1,12 +1,12 @@
 import React from 'react';
- import { Component } from 'react';
 
-const addToCart = (product) => {
-  console.log(product);
-}
+const Product = (props) => {
 
-export default class Product extends Component {
-  render() {
+  const addToCart = () =>{
+    console.log(props);
+    alert("hi");
+  };
+
   return (
     <div className='container'>        
         <div className='row'>
@@ -14,7 +14,7 @@ export default class Product extends Component {
             <div className='mt-4 fs-4'>
               <p>Product name: {this.props.name}</p>
               <p>Price: {this.props.price}</p>
-            <button class="btn btn-outline-success" onClick={addToCart(this)}>Add To Shopping Cart</button>
+            <button class="btn btn-outline-success" onClick={addToCart()}>Add To Shopping Cart</button>
             </div>
             
           </div>
@@ -24,6 +24,7 @@ export default class Product extends Component {
         </div>
         <hr></hr>
     </div>
-  );
-  }
-}
+  ); 
+};
+
+export default Product;

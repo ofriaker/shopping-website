@@ -14,8 +14,9 @@ export default function App() {
   const [cart, setCart] = React.useState(list);
 
   function addToCart(product){
+    // console.log(cart);
     setCart([...cart, product]);
-    console.log(cart);
+    // console.log(cart);
   }
 
   return (
@@ -24,8 +25,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<ProductList addToCart={addToCart}/>} />
-          <Route path="shoppingCart" element={<ShoppingCart cart={cart}/>}>
-          </Route>
+          <Route path="shoppingCart" element={<ShoppingCart cart={cart}/>} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -19,7 +19,6 @@ useEffect(() => {
   fetchData();
 }, []);
     
-  //const [cart, setCart] = React.useState(list);
 
   return products.map(product => (
     <div>
@@ -29,14 +28,5 @@ useEffect(() => {
         addToCart={props.addToCart} />
     </div>
   ));
-      // return products.map(product => (
-      //   <Product addToCart={addToCart} key={product.name}
-      //     name={product.name}
-      //     price={product.price}
-      //     description={product.description}
-      //     productImageUrl={product.productImageUrl}
-      //   />
-      // ));
-    
 }
   

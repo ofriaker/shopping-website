@@ -3,8 +3,8 @@ import ShoppingList from './ShoppingList';
 import { list } from './data';
 import { useEffect,useState } from 'react';
 
-export default function ShoppingCart() {
-
+export default function ShoppingCart(props) {
+    const cart = props.cart;
     const [total, setTotal] = useState(0);
     const [disable, setDisable] = React.useState(false);
 
@@ -42,10 +42,10 @@ export default function ShoppingCart() {
     return (
         <div className='container'>
         <h1> My Shoping Cart</h1>
-        <ShoppingList></ShoppingList>
+            <ShoppingList cart={cart}></ShoppingList>
         <h1>Total: {total}$</h1>  
         <div className='d-md-flex justify-content-md-end'>
-        <button type="button" class="btn btn-outline-success btn-lg" disabled={disable} onClick={BuyCart}>Buy Now</button>  
+        <button type="button" className="btn btn-outline-success btn-lg" disabled={disable} onClick={BuyCart}>Buy Now</button>  
         </div>
         </div>
     )

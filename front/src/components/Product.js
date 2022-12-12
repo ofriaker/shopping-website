@@ -1,16 +1,11 @@
 import React from 'react';
-//import {list} from'./data.js';
 
 function Product(props){
   const product = props.product;
   const addToCart = props.addToCart;
-  // const [cart, setCart] = React.useState(list);
 
   const handleClick = () => {
     addToCart(product);
-    //console.log(product);
-    // //const newCart = cart.concat( props );
-    // setCart([...cart,props]);
   }
 
     return (

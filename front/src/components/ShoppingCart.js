@@ -3,7 +3,6 @@ import ShoppingList from './ShoppingList';
 import { list } from './data';
 import { useEffect,useState } from 'react';
 
-
 export default function ShoppingCart() {
 
     const [total, setTotal] = useState(0);

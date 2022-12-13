@@ -1,35 +1,45 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from "react-router-dom";
-import NavBar from "./components/NavBar";
-import React from "react";
+import React, { createContext, useState } from "react";
 import ProductList from "./components/ProductList";
 import ShoppingCart from "./components/ShoppingCart";
-import { list } from './components/data';
 
+export const cartContext = createContext();
 
 export default function App() {
-  const [cart, setCart] = React.useState(list);
 
-  function addToCart(product){
-    // console.log(cart);
-    setCart([...cart, product]);
-    // console.log(cart);
-  }
-
+  const [cart, setCart] = useState([]);
+  const [isShoppingCart, setIsShoppingCart] = useState(false);
+  const value = {cart, setCart};
+  
+  
   return (
     <div>
-      <NavBar/>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<ProductList addToCart={addToCart}/>} />
-          <Route path="shoppingCart" element={<ShoppingCart cart={cart}/>} />
-        </Routes>
-      </BrowserRouter>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a className="navbar-brand" href="/">
+        </a>
+      </div>
+      <div>
+        <button
+          className="btn"
+          onClick={() => setIsShoppingCart(!isShoppingCart)}
+        >
+          {isShoppingCart ? (
+            <i className="fa-solid fa-house-user">To Product List</i>
+          ) : (
+                <i className="fas fa-shopping-cart">To Shopping Cart</i>
+          )}
+        </button>
+      </div>
+    </nav>
+
+    <div className="App">
+        <cartContext.Provider value={value}>
+      {isShoppingCart ? 
+        (<ShoppingCart/>) : (<ProductList/>)
+      }
+      </cartContext.Provider>
     </div>
-    
+    </div>
   );
 }
 

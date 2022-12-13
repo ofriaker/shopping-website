@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 function NavBar() {
+    
     return (
         <Navbar bg="light" expand="lg">
             <Container>
@@ -17,5 +18,6 @@ function NavBar() {
         </Navbar>
     );
 }
+
 
 export default NavBar;

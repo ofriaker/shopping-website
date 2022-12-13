@@ -1,8 +1,10 @@
 import CartItem from './CartItem';
-import React from 'react';
+import {React, useContext } from 'react';
+import { cartContext } from '../App.js';
 
-function ShoppingList(props) {
-    const cart = props.cart;
+function ShoppingList() {
+    const { cart, setCart } = useContext(cartContext);
+    console.log(cart);
 
     return cart.map(l => (
         <div>

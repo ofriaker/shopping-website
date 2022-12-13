@@ -1,24 +1,25 @@
-import React from 'react';
+import React  from 'react';
 import ShoppingList from './ShoppingList';
-import { list } from './data';
-import { useEffect,useState } from 'react';
+import { useEffect,useState, useContext} from 'react';
+import { cartContext } from '../App';
+
 
 export default function ShoppingCart(props) {
-    const cart = props.cart;
+    const {cart, setCart} = useContext(cartContext);
     const [total, setTotal] = useState(0);
     const [disable, setDisable] = React.useState(false);
 
     useEffect(() => {
         var p =0;
-        list.forEach((item) => {
+        cart.forEach((item) => {
             p += item.price * 1.0;
         });
         setTotal(p);
-    },[list])
+    },[cart])
 
     function BuyCart() {
         var cartState= [];
-        list.forEach((item) => {
+        cart.forEach((item) => {
             cartState.push({name: item.name});
         });
 
@@ -42,7 +43,7 @@ export default function ShoppingCart(props) {
     return (
         <div className='container'>
         <h1> My Shoping Cart</h1>
-            <ShoppingList cart={cart}></ShoppingList>
+            <ShoppingList></ShoppingList>
         <h1>Total: {total}$</h1>  
         <div className='d-md-flex justify-content-md-end'>
         <button type="button" className="btn btn-outline-success btn-lg" disabled={disable} onClick={BuyCart}>Buy Now</button>  

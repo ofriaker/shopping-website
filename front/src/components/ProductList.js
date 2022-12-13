@@ -1,8 +1,8 @@
 import Product from './Product.js';
 import React, { useEffect, useState } from 'react';
 
-export default function ProductList(props) {
-// const addToCart = props.addToCart;
+export default function ProductList() {
+
  var [products, setProduct] = useState([]);
 
 useEffect(() => {
@@ -24,8 +24,7 @@ useEffect(() => {
     <div>
       <Product
         key={product.id}
-        product={product}
-        addToCart={props.addToCart} />
+        product={product}/>
     </div>
   ));
 }

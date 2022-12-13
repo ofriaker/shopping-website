@@ -6,6 +6,7 @@ import { cartContext } from '../App';
 
 export default function ShoppingCart(props) {
     const {cart, setCart} = useContext(cartContext);
+    console.log(cart);
     const [total, setTotal] = useState(0);
     const [disable, setDisable] = React.useState(false);
 
@@ -38,6 +39,7 @@ export default function ShoppingCart(props) {
 
     const onBuy = () => {
         alert("Your order is saved in DB"); 
+        setCart([]);
       };
 
     return (
